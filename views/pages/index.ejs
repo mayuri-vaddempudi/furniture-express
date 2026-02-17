@@ -1,0 +1,55 @@
+<%- include("../partials/header", { title: "FurniLux - Home" }) %>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay">
+                <div class="hero-text">
+                    <h1>Luxury Furniture for Modern Living</h1>
+                    <p>Discover premium furniture crafted with style and comfort.</p>
+                    <a href="/products" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collections">
+            <h2>Explore Our Collections</h2>
+            <div class="grid">
+                <% collections.forEach((collection, index)=> { %>
+                    <div class="card">
+                        <img src="<%= collection.image %>" alt="<%= collection.name %>">
+                        <h3>
+                            <%= collection.name %>
+                        </h3>
+                        <p>
+                            <%= collection.description %>
+                        </p>
+                        <a class="btn-small" href="/collections/<%= index %>">View</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>Popular Products</h2>
+            <div class="grid">
+                <% products.forEach((product, index)=> { %>
+                    <div class="card">
+                        <img src="<%= product.image %>" alt="<%= product.name %>">
+                        <h3>
+                            <%= product.name %>
+                        </h3>
+                        <p>
+                            <%= product.description %>
+                        </p>
+                        <p class="price">
+                            <%= product.price %>
+                        </p>
+                        <a class="btn-small" href="/products/<%= index %>">View</a>
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+    </main>
+    <%- include("../partials/footer") %>

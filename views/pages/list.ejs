@@ -1,0 +1,29 @@
+<%- include("../partials/header", { title }) %>
+
+    <h2 class="page-title">
+        <%= title %>
+    </h2>
+
+    <div class="grid">
+        <% items.forEach((item, index)=> { %>
+            <div class="card">
+                <img src="<%= item.image %>">
+                <h3>
+                    <%= item.name %>
+                </h3>
+                <p>
+                    <%= item.description %>
+                </p>
+
+                <% if (item.price) { %>
+                    <p class="price">
+                        <%= item.price %>
+                    </p>
+                    <% } %>
+
+                        <a class="btn-small" href="<%= baseUrl %>/<%= index %>">View</a>
+            </div>
+            <% }) %>
+    </div>
+
+    <%- include("../partials/footer") %>
