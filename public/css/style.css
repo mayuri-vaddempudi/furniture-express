@@ -202,7 +202,7 @@ main {
 
     .navbar {
         flex-wrap: wrap;
-        padding: 30px;
+        padding: 10px 50px;
     }
 
     .hero-text h1 {
